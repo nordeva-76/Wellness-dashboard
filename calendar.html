@@ -79,5 +79,23 @@
 
 </main>
 
+<script>
+const days = document.querySelectorAll(".day");
+
+days.forEach((day, index) => {
+    const saved = localStorage.getItem("wellness-day-" + index);
+
+    if (saved) {
+        day.innerHTML = saved;
+    }
+
+    day.addEventListener("input", () => {
+        localStorage.setItem(
+            "wellness-day-" + index,
+            day.innerHTML
+        );
+    });
+});
+</script>
 </body>
 </html>
