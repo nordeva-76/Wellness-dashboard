@@ -23,7 +23,7 @@ function saveWeight() {
     if (weightDisplay) {
         weightDisplay.textContent = `Current Weight: ${weight} lbs`;
     }
-}
+
 
 window.onload = function () {
 
