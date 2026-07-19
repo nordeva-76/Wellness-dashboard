@@ -23,6 +23,79 @@ header h1 {
 
 header p {
     color: #666;
+ /* ==========================
+   WELLNESS CALENDAR
+========================== */
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.day-header {
+    text-align: center;
+    font-weight: bold;
+    color: #2d6a4f;
+    padding: 10px 0;
+}
+
+.day {
+    aspect-ratio: 1 / 1;
+    background: white;
+    border: 2px solid #dcdcdc;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all .25s ease;
+    user-select: none;
+}
+
+.day:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,.15);
+}
+
+/* Status Colors */
+
+.day.green {
+    background: #4CAF50;
+    color: white;
+}
+
+.day.yellow {
+    background: #FFC107;
+    color: #222;
+}
+
+.day.red {
+    background: #E53935;
+    color: white;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+    .calendar {
+        gap: 6px;
+    }
+
+    .day {
+        font-size: 15px;
+        border-radius: 8px;
+    }
+
+    .day-header {
+        font-size: 13px;
+    }
+
+}
     margin-top: 8px;
 }
 
