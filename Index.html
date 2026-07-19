@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellness Dashboard</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+    <h1>🌿 Wellness Dashboard</h1>
+    <p>Building consistency one day at a time.</p>
+</header>
+
+<main>
+
+    <!-- Non-Negotiables -->
+    <section class="card">
+        <h2>✅ Today's Non-Negotiables</h2>
+
+        <label><input type="checkbox"> Water Goal</label><br>
+        <label><input type="checkbox"> Vitamins</label><br>
+        <label><input type="checkbox"> Exercise</label><br>
+        <label><input type="checkbox"> Healthy Meals</label><br>
+        <label><input type="checkbox"> Journal</label>
+    </section>
+
+    <!-- Daily Status -->
+    <section class="card">
+        <h2>🟢 Daily Status</h2>
+
+        <button class="green">Green Day</button>
+        <button class="yellow">Yellow Day</button>
+        <button class="red">Red Day</button>
+    </section>
+
+    <!-- Weight -->
+    <section class="card">
+        <h2>⚖️ Weight Tracker</h2>
+
+        <input type="number"
+               id="weight"
+               placeholder="Today's Weight">
+
+        <button onclick="saveWeight()">
+            Save Weight
+        </button>
+
+        <p id="weightDisplay"></p>
+    </section>
+
+    <!-- Notes -->
+    <section class="card">
+        <h2>📝 Daily Notes</h2>
+
+        <textarea
+            id="notes"
+            rows="6"
+            placeholder="How did today go?">
+        </textarea>
+    </section>
+
+    <!-- Weekly Reflection -->
+    <section class="card">
+        <h2>🌟 Weekly Reflection</h2>
+
+        <textarea
+            rows="6"
+            placeholder="Wins, challenges, lessons learned...">
+        </textarea>
+    </section>
+
+    <!-- Streak -->
+    <section class="card">
+        <h2>🔥 Current Streak</h2>
+
+        <h3 id="streak">0 Days</h3>
+    </section>
+
+</main>
+
+<script src="app.js"></script>
+
+</body>
+</html>
