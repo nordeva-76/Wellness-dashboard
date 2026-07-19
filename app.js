@@ -58,3 +58,50 @@ window.onload = function () {
     });
 
 };
+/* ==========================
+   CALENDAR DAY TRACKER
+========================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const days = document.querySelectorAll(".day");
+
+    days.forEach((day, index) => {
+
+        const savedState = localStorage.getItem(`day-${index}`);
+
+        if (savedState) {
+            day.classList.add(savedState);
+        }
+
+        day.addEventListener("click", function () {
+
+            if (day.classList.contains("green")) {
+
+                day.classList.remove("green");
+                day.classList.add("yellow");
+                localStorage.setItem(`day-${index}`, "yellow");
+
+            } else if (day.classList.contains("yellow")) {
+
+                day.classList.remove("yellow");
+                day.classList.add("red");
+                localStorage.setItem(`day-${index}`, "red");
+
+            } else if (day.classList.contains("red")) {
+
+                day.classList.remove("red");
+                localStorage.removeItem(`day-${index}`);
+
+            } else {
+
+                day.classList.add("green");
+                localStorage.setItem(`day-${index}`, "green");
+
+            }
+
+        });
+
+    });
+
+});
